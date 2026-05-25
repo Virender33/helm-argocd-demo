@@ -1,0 +1,7 @@
+1. Get the application URL by running:
+{{- if eq .Values.service.type "LoadBalancer" }}
+  export SERVICE_IP=$(kubectl get svc --namespace {{ .Release.Namespace }} {{ include "myapp-chart.fullname" . }} -o jsonpath='{.status.loadBalancer.ingress[0].hostname}')
+  echo "http://$SERVICE_IP"
+{{- else }}
+  echo "Service type: {{ .Values.service.type }}"
+{{- end }}

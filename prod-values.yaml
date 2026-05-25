@@ -1,0 +1,19 @@
+replicaCount: 3
+image:
+  repository: nginx
+  tag: "1.25"
+service:
+  type: LoadBalancer
+  port: 80
+resources:
+  requests:
+    memory: "128Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "200m"
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 70
