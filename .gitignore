@@ -2,3 +2,7 @@
 *.tfstate
 *.tfstate.backup
 .terraform.lock.hcl
+*.csv
+*.pem
+*credentials*
+*accessKeys*
