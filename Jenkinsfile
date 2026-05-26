@@ -13,8 +13,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'pip3 install pytest'
-                sh 'pytest myapp/test_app.py -v'
+                sh 'sudo apt-get install -y python3-pip python3-pytest -q'
+                sh 'python3 -m pytest myapp/test_app.py -v'
             }
         }
         stage('Build Docker Image') {
