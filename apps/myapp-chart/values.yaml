@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: 525530758671.dkr.ecr.ap-south-1.amazonaws.com/myapp
-  tag: "86"
+  tag: "87"
   pullPolicy: Always
 
 service:
